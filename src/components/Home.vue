@@ -1,7 +1,21 @@
 <template>
   <v-container class="fill-height">
     <v-responsive class="align-center text-center fill-height">
-      <v-img height="300" src="@/assets/logo.svg" />
+      <v-img
+        class="mx-auto"
+        height="300"
+        lazy-src="@/assets/logo.svg"
+        src="@/assets/logo.svg"
+      >
+        <template #placeholder>
+          <div class="d-flex align-center justify-center fill-height">
+            <v-progress-circular
+              color="grey-lighten-4"
+              indeterminate
+            ></v-progress-circular>
+          </div>
+        </template>
+      </v-img>
 
       <div class="text-body-2 font-weight-light mb-n1 mt-3">
         Bem-vindo à Plataforma
